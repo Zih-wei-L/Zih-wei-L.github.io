@@ -1,0 +1,402 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.container {
+    max-width: calc(1600px + 10%);
+    height: 100%;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    position: relative;
+}
+
+nav {
+    width: 100%;
+    /* height: 54px; */
+    height: 27px;
+    background-color: white;
+}
+    /* 追加 */
+    .navbox{
+        width: 90%;
+        margin: auto;
+        /* align-items: center; */
+        justify-content: space-between;
+
+    }
+    .btbox{
+        margin:auto 12px;
+    }
+    .nav_left{
+        /* width: 100px; */
+        /* background-color: white; */
+        background-color: white;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        /* margin-left: 50px; */
+    }
+    .nav_right{
+        /* width: 100px; */
+        /* background-color: white; */
+        background-color: white;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        /* margin-right: 50px; */
+    }
+
+    /* 追加-- */
+
+    /* banner說明追加 */
+    /* 分隔線 */
+
+section {
+    width: 100%;
+}
+    /* 追加 */
+    .items{
+        /* margin: auto; */
+        /* max-width: 100%; */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }    
+    .brdnicon{
+        width: 40px;
+        height: 40px;
+    }
+    .banner_dn_bts{
+        text-align: center;
+    }
+
+
+    /* 追加-- */
+
+    /* 追加 */
+    .text_box{
+        margin: 0 auto ;
+        width: 90%;
+        background-color: white;
+    }
+    /* 追加-- */
+
+    /* 追加 */
+
+    .outsidelinksbox{
+        width: 90%;
+        margin: 0 auto ;
+        margin-bottom: 30px;
+
+        flex-direction: row;
+        align-items: center;
+    }
+        .outlink{
+            margin: auto 10px;
+
+            width: 32px;
+            height: 32px;
+        }
+    /* 追加-- */
+
+footer {
+    width: 100%;
+    height: 395px;
+    background-color: rgb(242, 242, 242);
+}
+    /* 追加 */
+    .footer_box{
+        background-color: rgb(242, 242, 242);
+        width: 90%;
+        margin: auto;
+        justify-content: space-between;
+    }
+    .footerbar{
+        width: 100%;
+        background-color: rgb(242, 242, 242);
+    }
+    .links_title{
+        font-weight: 600;
+    }
+    .margin{
+        margin: 15px 0;
+    }
+
+    .footerbarbox{
+        width: 90%;
+        height: 72px;
+        background-color: rgb(242, 242, 242);
+
+        margin: auto;
+
+        justify-content: space-between;
+        /* align-items: center; */
+
+    }
+        .footerbar_left{
+            margin:auto 0;
+        }
+        .footerbar_right{
+            flex-direction: row;
+            align-items: center;
+        }
+            .last{
+                display: flex;
+                flex-direction: row;
+            }
+
+    /* 追加-- */
+
+.big-ad .container img {
+    width: 100%;
+    display: block;
+}
+
+.big-ad .container .textbox {
+    position: absolute;
+    width: 320px;
+    height: 150px;
+    /* background-color: teal; */
+    top: 30%;
+    left: 10%;
+}
+    /* banner說明追加 */
+    .bn_in_bt{
+        color: white;
+        background-color: black;
+    }
+    /* 分隔線 */
+
+#service .container .d-flex {
+    justify-content: center;
+}
+
+#service .container .items-group {
+    padding: 48px 0;
+}
+
+#service .container .items-group .items {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+}
+
+#service .container .items-group .items:nth-child(2) {
+    margin: 0 30px;
+}
+
+.ad-card {
+    padding: 40px 0;
+}
+
+.ad-card .container .d-flex {
+    justify-content: space-between;
+}
+
+.ad-card .container .card-group .card {
+    /* 下面的30px是中間的三個間隔 */
+    width: calc(25% - 30px);
+    height: 400px;
+    background-color: white;
+}
+    /* 追加 */
+    .adspic{
+        max-width:100% ;
+    }
+    /* 追加-- */
+    /* 追加 */
+    a {
+        color: black;
+        font-size: 15px;
+        text-decoration:none;
+        /* outline-style: initial; */
+    }
+    ul{
+        /* margin: 0; */
+        padding:0;
+        /* line-height: 10px; */
+
+        list-style: none;
+    }
+    .ftbarwordcolor{
+        color: #616161
+        ;
+    }
+    .marginR{
+        margin-right: 15px;
+    }
+    .midadlink{
+        color: #0067b8;
+    }
+    /* 追加-- */
+    a:hover{
+        /* text-decoration:underline; */
+        border-bottom:3px solid black;
+    }
+    .logo:hover{
+        border-bottom:0px solid black;
+    }
+    .personal:hover{
+        border-bottom:0px solid black;
+    }
+    /* 未完項目:hover效果微調(footer,箭頭跑出去,閃光(透明度)) */
+    .blackboard{
+        width: 75px;
+        height: 30px;
+        margin-right: 50px;
+        line-height: 30px;
+    }
+    .blackboard:hover{
+        margin-right: 100px;
+        border-bottom:3px solid white;
+    }
+    .fa-angle-right{
+        position: relative;
+    }
+    .fa-angle-right:hover{
+        left: 5px;
+    }
+    /* 未完分隔線 */
+
+@media (max-width:1084px) {
+    .ad-card .container .d-flex {
+        flex-wrap: wrap;
+    }
+
+    .ad-card .container .card-group .card {
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+    .barword{
+        display: none;
+    }
+    .footer_box{
+        flex-wrap: wrap;
+        padding-top: 30px;
+    }
+    .links_box{        
+        width: calc(33% - 20px);
+        margin-bottom: 30px;        
+    }
+    footer {
+        height: 624px;
+    }
+    
+    .adspic{
+        width: 100%;
+    }
+}
+/* 專門為了860以下做的navbar */
+    .nav860size{
+        display: none;   
+        position: relative     
+    }
+    .logosec{
+        position: absolute;
+        left: calc(50% - 51.65px);
+        top: 2px;
+    }
+    .navleft2{
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        left: 5%;
+        top: 5px;
+    }
+    .navright2{
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        right: 5%;
+        top: 5px;
+    }
+    .size860bt{
+        margin-right:10px;
+    }
+/* 分隔線 */
+
+
+@media (max-width:860px){
+    .navbox{
+        display: none;
+    }
+    .nav860size{
+        display: block;
+    }
+
+}
+
+@media (max-width:768px) {
+    .big-ad .container .textbox {
+        background-color: #e6e6e6;
+        position: unset;
+        width: 100%;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .items-group{
+        flex-direction: column;
+    }
+    #service .container .items-group .items:nth-child(2) {
+        margin: 0 ;
+    }
+
+    #service .container .items-group .items {
+        width: 100%;
+        height: auto;
+        margin: 30px auto;
+        flex-direction: row;
+        justify-content:flex-start;
+    }
+
+
+    .banner_dn_bts{
+        text-align: unset;
+        margin-left: 15px;
+    }
+    .footerbarbox{
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .footerbar_left , .footerbar_right{
+        width: 100%;
+    }
+    .last{
+        display: flex;
+        flex-direction: row;
+    }
+    .marginR{
+        margin-right: 15px;
+    }
+
+
+}
+@media (max-width:540px) {
+    .ad-card .container .card-group .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .links_box{        
+        width: 100%;
+        margin-bottom: 30px;        
+    }
+    footer {
+        height:1650px;
+    }
+
+}
