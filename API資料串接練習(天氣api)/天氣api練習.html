@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+        }
+        nav{
+            width: 100%;
+            height: 80px;
+            background-color: brown;
+            color: white;
+        }
+            .bar{
+                font-size: 36px;
+                text-align: center;
+                padding-top: 15px;
+                font-weight: 600;
+            }
+        main{
+            width: 100%;
+            min-height: calc(100vh - 100px);
+            background-color: lightgoldenrodyellow;
+            padding-bottom: 35px;
+        }
+        .card-group{
+            /* padding: 15px; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+        }
+        .card{
+            width: 300px;
+            height: 450px;
+            background-color:red ;
+            margin-top: 35px;
+            border-radius: 75px;
+        }
+        .pic{
+            width: 100%;
+            height: 60%;
+            border-top-left-radius: 75px;
+            background-color: cornflowerblue;
+        }
+        .info{
+            width: 100%;
+            height: 40%;
+            border-bottom-right-radius: 75px;
+            background-color: tomato;
+
+        }
+        .info p {
+            padding: 0;
+            margin:5px ;
+        }
+        h2{
+            padding: 0;
+            margin: 0;
+            padding-top: 5px;
+            padding-left: 5px;
+        }
+        .test{
+            width: 500px;
+            height: 500px;
+        }
+        
+            
+        
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <div class="bar">天氣API練習</div>
+    </nav>
+    <main>
+        <div class="card-group">
+            <!-- 裝起來 -->
+
+            <!-- <div class="test" style="background-image: url(''); background-size: cover; background-position: center;"> -->
+                
+            <!-- </div> -->
+            <!--  -->
+        </div>
+
+    </main>
+
+
+
+    <script>
+
+        fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-B5282D9D-8FDD-40E9-AD48-B1DF3270465D')
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(wheather) {
+            var city = wheather.records.location
+
+            city.forEach(element => {
+                // var 區域變數
+                var cityname = element.locationName
+                var Wx = element.weatherElement[0].time[0].parameter.parameterName
+                var PoP = element.weatherElement[1].time[0].parameter.parameterName
+                var MinT = element.weatherElement[2].time[0].parameter.parameterName
+                var CI = element.weatherElement[3].time[0].parameter.parameterName
+                var MaxT = element.weatherElement[4].time[0].parameter.parameterName
+                
+                // console.log(cityname);
+                // console.log(PoP);
+
+
+
+    
+
+
+                var allinfo = [cityname,Wx,PoP,MinT,CI,MaxT]
+                var area = document.querySelector(".card-group")
+                var pubs = [PoP]
+                // var picimgs = 
+                // console.log(pub);
+                pubs.forEach(pub => {
+                    if(pub>=50){
+                        picimg = "https://www.cwb.gov.tw/V8/assets/img/weather_icons/weathers/svg_icon/day/11.svg"
+
+                    }else if(pub<50 && pub>0){
+                        picimg = "https://www.cwb.gov.tw/V8/assets/img/weather_icons/weathers/svg_icon/day/05.svg"
+                        
+                    }else{
+                        picimg = "https://www.cwb.gov.tw/V8/assets/img/weather_icons/weathers/svg_icon/day/01.svg"
+
+                    }
+                    console.log(pub);
+                    
+                });
+
+
+                
+
+                area.innerHTML += `            
+                    <div class="card">
+                        <div class="pic" style="background-image: url('${picimg}'); background-size: cover; background-position: center;">
+                            
+                        </div>
+                        <div class="info">
+                            <h2>${allinfo[0]}</h2>
+                            <p>天氣:${allinfo[1]}</p>
+                            <p>氣溫:${allinfo[3]} ~ ${allinfo[5]}</p>
+                            <p>降雨機率: ${allinfo[2]}</p>
+                            <p>舒適度:${allinfo[4]}</p>
+                        </div>
+                    </div>`
+
+
+            });
+
+         });
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
