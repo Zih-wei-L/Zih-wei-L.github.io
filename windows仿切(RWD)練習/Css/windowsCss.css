@@ -155,6 +155,10 @@ footer {
                 flex-direction: row;
             }
 
+            .state{
+                height: 100px;
+            }
+
     /* 追加-- */
 
 .big-ad .container img {
